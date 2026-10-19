@@ -1,6 +1,7 @@
 import json
 import requests
 from datetime import datetime, timedelta
+from github_storage import load_athletes
 
 with open("config.json") as f:
     config = json.load(f)
@@ -26,8 +27,7 @@ def get_access_token(refresh_token):
 
 def sync_activities():
 
-    with open("data/athletes.json") as f:
-        athletes = json.load(f)
+    athletes, _ = load_athletes()
 
     all_activities = []
 

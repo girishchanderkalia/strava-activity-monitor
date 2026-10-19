@@ -2,8 +2,7 @@ from flask import Flask, redirect, request
 import requests
 import json
 import os
-
-from github_storage import load_athletes
+from github_storage import (load_athletes, save_athletes )
 
 app = Flask(__name__)
 
@@ -60,29 +59,34 @@ def callback():
         "refresh_token": data["refresh_token"]
     }
 
-    from github_storage import (
-    load_athletes,
-    save_athletes
-   )
 
     athletes, sha = load_athletes()
 
-    if not any(
-    a["athlete_id"] == record["athlete_id"]
-    for a in athletes
-    ):
-        athletes.append(record)
-
-        save_athletes(
-            athletes,
-            sha
+    try:
+        athletes, sha = load_athletes()
+        if not any(
+            a["athlete_id"] == record["athlete_id"]
+            for a in athletes
+        ):
+            athletes.append(record)
+            save_athletes(
+                athletes,
+                sha
+            )
+    except Exception as e:
+        print(
+            f"Failed to save athlete: {e}"
         )
 
-    return (
-        f"Welcome "
-        f"{athlete['firstname']} "
-        f"{athlete['lastname']}!"
-    )
+    return f"""
+            <h1>✅ Registration Successful</h1>
+            <p> Welcome
+                <b>{athlete['firstname']} {athlete['lastname']}</b>
+            </p>
+            <p> You have joined the Walking Challenge. </p>
+            <p> You may now close this window. </p>
+        """
+
 
 
 if __name__ == "__main__":
