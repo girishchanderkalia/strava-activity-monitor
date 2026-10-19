@@ -46,9 +46,22 @@
       "month_km": 6.0,
       "goal_percent": 6.0,
       "streak": 0
+    },
+    {
+      "name": "MEENAKSHI SHARMA",
+      "today_km": 1.4,
+      "month_km": 4.9,
+      "goal_percent": 4.9,
+      "streak": 2
     }
   ],
   "recent_activities": [
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 1.4,
+      "date": "2026-10-19T19:30:15Z",
+      "title": "Evening Walk"
+    },
     {
       "name": "Deepika  Adyansh",
       "distance": 2.8,
@@ -66,6 +79,12 @@
       "distance": 3.1,
       "date": "2026-10-19T11:51:30Z",
       "title": "Day2"
+    },
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 3.5,
+      "date": "2026-10-18T19:24:45Z",
+      "title": "Evening Walk"
     },
     {
       "name": "yati sharma",
@@ -96,19 +115,7 @@
       "distance": 2.5,
       "date": "2026-10-14T10:57:50Z",
       "title": "Morning Walk"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 1.8,
-      "date": "2026-10-13T13:28:43Z",
-      "title": "Afternoon Walk"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 2.4,
-      "date": "2026-10-12T12:15:24Z",
-      "title": "Lunch Walk"
     }
   ],
-  "updated_at": "19 Oct 2026 16:18"
+  "updated_at": "19 Oct 2026 16:44"
 }
