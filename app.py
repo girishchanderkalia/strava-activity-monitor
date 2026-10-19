@@ -3,6 +3,8 @@ import requests
 import json
 import os
 
+from github_storage import load_athletes
+
 app = Flask(__name__)
 
 import os
@@ -58,24 +60,23 @@ def callback():
         "refresh_token": data["refresh_token"]
     }
 
-    path = "data/athletes.json"
+    from github_storage import (
+    load_athletes,
+    save_athletes
+   )
 
-    os.makedirs("data", exist_ok=True)
-
-    if os.path.exists(path):
-        with open(path, "r") as f:
-            athletes = json.load(f)
-    else:
-        athletes = []
+    athletes, sha = load_athletes()
 
     if not any(
-        x["athlete_id"] == record["athlete_id"]
-        for x in athletes
+    a["athlete_id"] == record["athlete_id"]
+    for a in athletes
     ):
         athletes.append(record)
 
-        with open(path, "w") as f:
-            json.dump(athletes, f, indent=2)
+        save_athletes(
+            athletes,
+            sha
+        )
 
     return (
         f"Welcome "
