@@ -27,11 +27,84 @@ def home():
     )
 
     return f"""
-    <h1>Walking Challenge</h1>
-    <a href="{auth_url}">
-        Connect Strava
-    </a>
-    """
+            <!DOCTYPE html>
+            <html>
+
+            <head>
+
+            <title>Walking Challenge</title>
+
+            <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+            </head>
+
+            <body class="bg-light">
+
+            <div class="container">
+
+            <div class="row justify-content-center mt-5">
+
+            <div class="col-md-8">
+
+            <div class="card shadow">
+
+            <div class="card-body text-center p-5">
+
+            <h1 class="mb-3">
+            🚶 Walking Challenge
+            </h1>
+
+            <h4 class="text-muted mb-4">
+            Compete with friends and family
+            </h4>
+
+            <p class="lead">
+
+            Connect your Strava account and automatically
+            participate in the challenge leaderboard.
+
+            </p>
+
+            <div class="my-4">
+
+            ✅ Automatic tracking<br>
+            ✅ Live leaderboard<br>
+            ✅ Daily champions<br>
+            ✅ Streak tracking
+
+            </div>
+
+            <a
+            href="{auth_url}"
+            class="btn btn-warning btn-lg">
+
+            🔗 Connect Strava
+
+            </a>
+
+            <div class="mt-4 text-muted">
+
+            Your walking activities will be used
+            only for challenge rankings.
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </body>
+
+            </html>
+            """
 
 
 @app.route("/callback")
@@ -84,13 +157,106 @@ def callback():
         )
 
     return f"""
-            <h1>✅ Registration Successful</h1>
-            <p> Welcome
-                <b>{athlete['firstname']} {athlete['lastname']}</b>
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+            <title>
+            Registration Successful
+            </title>
+
+            <meta http-equiv="refresh" content="5;url=/leaderboard">
+
+            <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+            </head>
+
+            <body class="bg-light">
+
+            </head>
+
+            <body class="bg-light">
+
+            <div class="container">
+
+            <div class="row justify-content-center mt-5">
+
+            <div class="col-md-7">
+
+            <div class="card shadow">
+
+            <div class="card-body text-center p-5">
+
+            <h1 class="text-success">
+            ✅ Registration Successful
+            </h1>
+
+            <h3 class="mt-4">
+
+            Welcome
+
+            <br>
+
+            <strong>
+            {athlete['firstname']}
+            {athlete['lastname']}
+            </strong>
+
+            </h3>
+
+            <p class="lead mt-4">
+
+            You have successfully joined
+            the Walking Challenge.
+
             </p>
-            <p> You have joined the Walking Challenge. </p>
-            <p> You may now close this window. </p>
-        """
+
+            <hr>
+
+            <p>
+
+            Your future walking activities
+            will now automatically contribute
+            to the leaderboard.
+
+            </p>
+
+            <div class="mt-4">
+
+            <a
+            href="/leaderboard"
+            class="btn btn-primary btn-lg">
+
+            🏆 View Leaderboard
+
+            </a>
+
+            </div>
+
+            <div class="mt-4 text-muted">
+
+            You can safely close this page.
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </body>
+
+            </html>
+            """
 
 @app.route("/leaderboard")
 def leaderboard():
