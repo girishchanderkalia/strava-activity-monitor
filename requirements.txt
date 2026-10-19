@@ -1,5 +1,6 @@
-flask
+Flask
 requests
-pandas
 openpyxl
+pandas
 stravalib
+gunicorn
