@@ -120,4 +120,3 @@ def render_dashboard():
     """
 
     return html
-``
