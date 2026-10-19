@@ -3,6 +3,7 @@ import requests
 import json
 import os
 from github_storage import (load_athletes, save_athletes )
+from dashboard import render_dashboard
 
 app = Flask(__name__)
 
@@ -64,15 +65,19 @@ def callback():
 
     try:
         athletes, sha = load_athletes()
-        if not any(
-            a["athlete_id"] == record["athlete_id"]
-            for a in athletes
-        ):
+        existing = next(
+            (
+                a for a in athletes
+                if a["athlete_id"] == record["athlete_id"]
+            ),
+            None
+        )
+        if existing:
+            existing["refresh_token"] = (record["refresh_token"] )
+        else:
             athletes.append(record)
-            save_athletes(
-                athletes,
-                sha
-            )
+
+        save_athletes( athletes, sha )
     except Exception as e:
         print(
             f"Failed to save athlete: {e}"
@@ -87,7 +92,10 @@ def callback():
             <p> You may now close this window. </p>
         """
 
+@app.route("/leaderboard")
+def leaderboard():
 
+    return render_dashboard()
 
 if __name__ == "__main__":
     app.run(
