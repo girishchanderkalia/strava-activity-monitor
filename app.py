@@ -60,6 +60,8 @@ def callback():
 
     path = "data/athletes.json"
 
+    os.makedirs("data", exist_ok=True)
+
     if os.path.exists(path):
         with open(path, "r") as f:
             athletes = json.load(f)
