@@ -462,10 +462,10 @@ def render_dashboard():
         const time =
             date.toLocaleTimeString(
                 [],
-                {
+                {{
                     hour: '2-digit',
                     minute: '2-digit'
-                }
+                }}
             );
 
         if (activityDay === today) {{
