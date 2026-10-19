@@ -1,5 +1,8 @@
 name: Update Leaderboard
 
+permissions:
+  contents: write
+
 on:
 
   schedule:
@@ -33,6 +36,6 @@ jobs:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           GITHUB_OWNER: girishchanderkalia
           GITHUB_REPO: strava-activity-monitor
