@@ -7,6 +7,9 @@ import requests
 import os
 
 from datetime import datetime, timedelta
+from github_storage import (
+    load_leaderboard_cache
+)
 
 CLIENT_ID = os.environ.get(
     "STRAVA_CLIENT_ID"

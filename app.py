@@ -4,6 +4,12 @@ import json
 import os
 from github_storage import (load_athletes, save_athletes )
 from dashboard import render_dashboard
+from github_storage import (
+    load_challenge,
+    save_leaderboard_cache
+)
+
+from leaderboard import build_leaderboard
 
 app = Flask(__name__)
 
@@ -12,6 +18,10 @@ import os
 CLIENT_ID = os.environ.get("STRAVA_CLIENT_ID")
 CLIENT_SECRET = os.environ.get("STRAVA_CLIENT_SECRET")
 REDIRECT_URI = os.environ.get("REDIRECT_URI")
+
+ADMIN_KEY = os.environ.get(
+    "ADMIN_KEY"
+)
 
 
 @app.route("/")
@@ -175,8 +185,7 @@ def callback():
                     content="width=device-width, initial-scale=1">
 
                 <meta
-                    http-equiv="refresh"
-                    content="3;url=/leaderboard">
+                    http-equiv="refresh" content="3;url=/leaderboard">  
 
                 <link
                 href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -184,9 +193,6 @@ def callback():
 
             </head>
 
-            <body class="bg-light">
-
-            </head>
 
             <body class="bg-light">
 
@@ -271,6 +277,135 @@ def callback():
 def leaderboard():
 
     return render_dashboard()
+
+@app.route("/admin")
+def admin():
+
+    password = request.args.get("password")
+
+    if password != ADMIN_KEY:
+
+        return """
+        <form>
+            <h3>Admin Login</h3>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password">
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+        """
+
+    # Admin is authenticated, continue with admin page rendering
+
+    challenge = load_challenge()
+
+    return f"""
+    <html>
+
+    <head>
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1">
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    </head>
+
+    <body class="container mt-4">
+
+    <h1>
+    ⚙️ Admin
+    </h1>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <h5>
+            {challenge['name']}
+            </h5>
+
+            <p>
+
+            Start:
+            {challenge['start_date']}
+
+            <br>
+
+            End:
+            {challenge['end_date']}
+
+            <br>
+
+            Goal:
+            {challenge['goal_km']} km
+
+            </p>
+
+            <a
+                href="/refresh?key={ADMIN_KEY}"
+                class="btn btn-primary">
+
+                🔄 Refresh Leaderboard Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+    </body>
+
+    </html>
+    """
+
+@app.route("/refresh")
+def refresh():
+
+    if (
+        request.args.get("key")
+        != ADMIN_KEY
+    ):
+        return (
+            "Unauthorized",
+            401
+        )
+
+    data = build_leaderboard()
+
+    save_leaderboard_cache(
+        data
+    )
+
+    return """
+    <html>
+
+    <head>
+
+    <meta
+    http-equiv="refresh"
+    content="1;url=/admin">
+
+    </head>
+
+    <body>
+
+    Refresh complete.
+    Redirecting...
+
+    </body>
+
+    </html>
+    """
 
 if __name__ == "__main__":
     app.run(

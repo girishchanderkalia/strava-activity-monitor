@@ -6,6 +6,11 @@ def render_dashboard():
 
     data = load_leaderboard_cache()
 
+    updated_at = data.get(
+    "updated_at",
+    "Unknown"
+    )
+
     athletes = data["leaderboard"]
 
     challenge_name = data["challenge_name"]
@@ -117,6 +122,14 @@ href="/">
 
 </a>
 
+<a
+class="btn btn-secondary ms-2"
+href="/admin">
+
+⚙️ Admin
+
+</a>
+
 </div>
 
 </div>
@@ -132,6 +145,13 @@ href="/">
 <p class="text-muted">
 {start_date} →
 {end_date}
+</p>
+
+<p class="text-muted">
+
+Last Updated:
+<strong>{updated_at}</strong>
+
 </p>
 
 <div class="row g-3 mb-4">
