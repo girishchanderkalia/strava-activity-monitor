@@ -24,6 +24,11 @@ def render_dashboard():
     today_champion = data["today_champion"]
     streak_leader = data["streak_leader"]
 
+    recent_activities = data.get(
+        "recent_activities",
+        []
+    )
+
     rows = ""
 
     medals = [
@@ -72,6 +77,32 @@ def render_dashboard():
         if athletes
         else "N/A"
     )
+
+    activity_rows = ""
+
+    for activity in recent_activities:
+
+        activity_rows += f"""
+        <div class="list-group-item">
+
+            <strong>
+            {activity['name']}
+            </strong>
+
+            <br>
+
+            🚶 {activity['distance']} km
+
+            <br>
+
+            <small class="text-muted">
+
+            {activity['title']}
+
+            </small>
+
+        </div>
+        """
 
     html = f"""
 <html>
@@ -230,6 +261,22 @@ Last Updated:
 
 </div>
 </div>
+</div>
+
+<div class="card mb-4">
+
+    <div class="card-header">
+
+    🚶 Recent Activity
+
+    </div>
+
+    <div class="list-group list-group-flush">
+
+    {activity_rows}
+
+    </div>
+
 </div>
 
 <div class="col-md-6">

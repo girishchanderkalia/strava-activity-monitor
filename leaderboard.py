@@ -68,6 +68,7 @@ def build_leaderboard():
     today = datetime.now().date()
 
     leaderboard = []
+    recent_activities = []
 
     for athlete in athletes:
 
@@ -117,6 +118,25 @@ def build_leaderboard():
                 activity["distance"] / 1000
             )
 
+            recent_activities.append(
+            {
+                "name":
+                f"{athlete['firstname']} "
+                f"{athlete['lastname']}",
+
+                "distance":
+                round(distance_km, 1),
+
+                "date":
+                activity["start_date_local"],
+
+                "title":
+                activity.get(
+                    "name",
+                    "Walk"
+                )
+            }
+            )
             walk_days.add(
                 activity_date.date()
             )
@@ -208,6 +228,12 @@ def build_leaderboard():
     days_remaining = (
         end_date.date() - today
     ).days
+    
+    recent_activities.sort(
+        key=lambda x: x["date"],
+        reverse=True
+    )
+    recent_activities = recent_activities[:10]
 
     return {
 
@@ -237,5 +263,8 @@ def build_leaderboard():
         streak_leader,
 
         "leaderboard":
-        leaderboard
+        leaderboard,
+        
+        "recent_activities":
+        recent_activities,
     }
