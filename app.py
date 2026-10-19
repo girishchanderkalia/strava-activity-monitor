@@ -31,12 +31,15 @@ def home():
             <html>
 
             <head>
+                <title>Walking Challenge</title>
 
-            <title>Walking Challenge</title>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1">
 
-            <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet">
+                <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                rel="stylesheet">
 
             </head>
 
@@ -161,17 +164,23 @@ def callback():
 
             <html>
 
-            <head>
+           <head>
 
-            <title>
-            Registration Successful
-            </title>
+                <title>
+                Registration Successful
+                </title>
 
-            <meta http-equiv="refresh" content="5;url=/leaderboard">
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1">
 
-            <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet">
+                <meta
+                    http-equiv="refresh"
+                    content="3;url=/leaderboard">
+
+                <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                rel="stylesheet">
 
             </head>
 
@@ -239,7 +248,7 @@ def callback():
 
             <div class="mt-4 text-muted">
 
-            You can safely close this page.
+             Redirecting to leaderboard in 3 seconds...
 
             </div>
 

@@ -41,7 +41,13 @@ def render_dashboard():
             <td>{athlete['today_km']}</td>
             <td>{athlete['month_km']}</td>
             <td>🔥 {athlete['streak']}</td>
-            <td>{athlete['goal_percent']}%</td>
+            <td>
+                <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: {min(athlete['goal_percent'],100)}%;">
+                    {athlete['goal_percent']}%
+                </div>
+                </div>
+                </td>
         </tr>
         """
 
@@ -66,15 +72,57 @@ def render_dashboard():
 
 <head>
 
-<title>Walking Challenge</title>
+    <title>Walking Challenge</title>
 
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-rel="stylesheet">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
 
 </head>
 
-<body class="container mt-4">
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm rounded mb-4">
+
+<div class="container-fluid">
+
+<a
+class="navbar-brand fw-bold"
+href="/leaderboard">
+
+🚶 Walking Challenge
+
+</a>
+
+<div>
+
+<a
+class="btn btn-light"
+href="/leaderboard">
+
+🏆 Leaderboard
+
+</a>
+
+<a
+class="btn btn-warning ms-2"
+href="/">
+
+➕ Join
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container-fluid px-3 py-3">
 
 <h1>
 🚶 {challenge_name}
@@ -87,47 +135,47 @@ rel="stylesheet">
 
 <div class="row g-3 mb-4">
 
-<div class="col-md-4">
+<div class="col-12 col-md-4">
 <div class="card">
 <div class="card-body">
 <h6>🏆 Leader</h6>
-<h4>{leader}</h4>
+<h3 class="fw-bold">{leader}</h3>
 </div>
 </div>
 </div>
 
-<div class="col-md-2">
+<div class="col-6 col-md-2">
 <div class="card">
 <div class="card-body">
 <h6>👥 Participants</h6>
-<h4>{participants}</h4>
+<h3 class="fw-bold">{participants}</h3>
 </div>
 </div>
 </div>
 
-<div class="col-md-2">
+<div class="col-6 col-md-2">
 <div class="card">
 <div class="card-body">
 <h6>🚶 Group KM</h6>
-<h4>{total_distance}</h4>
+<h3 class="fw-bold">{total_distance}</h3>
 </div>
 </div>
 </div>
 
-<div class="col-md-2">
+<div class="col-6 col-md-2">
 <div class="card">
 <div class="card-body">
 <h6>📅 Days Left</h6>
-<h4>{days_remaining}</h4>
+<h3 class="fw-bold">{days_remaining}</h3>
 </div>
 </div>
 </div>
 
-<div class="col-md-2">
+<div class="col-6 col-md-2">
 <div class="card">
 <div class="card-body">
 <h6>🎯 Goal</h6>
-<h4>{goal_km}</h4>
+<h3 class="fw-bold">{goal_km}</h3>
 </div>
 </div>
 </div>
@@ -194,7 +242,9 @@ rel="stylesheet">
 
 </div>
 
-<table class="table table-striped">
+<div class="table-responsive">
+
+<table class="table table-striped table-hover">
 
 <thead>
 
@@ -218,7 +268,8 @@ rel="stylesheet">
 </tbody>
 
 </table>
-
+</div>
+</div>
 </body>
 
 </html>

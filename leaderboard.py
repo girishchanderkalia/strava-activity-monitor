@@ -174,22 +174,24 @@ def build_leaderboard():
 
     today_champion = None
 
-    active_today = [
-        a for a in leaderboard
+    today_walkers = [
+        a
+        for a in leaderboard
         if a["today_km"] > 0
     ]
 
-    if active_today:
+    if today_walkers:
 
         today_champion = max(
-            active_today,
+            today_walkers,
             key=lambda x: x["today_km"]
         )
 
     streak_leader = None
 
     active_streaks = [
-        a for a in leaderboard
+        a
+        for a in leaderboard
         if a["streak"] > 0
     ]
 
