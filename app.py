@@ -5,12 +5,11 @@ import os
 
 app = Flask(__name__)
 
-with open("config.json") as f:
-    config = json.load(f)
+import os
 
-CLIENT_ID = config["client_id"]
-CLIENT_SECRET = config["client_secret"]
-REDIRECT_URI = config["redirect_uri"]
+CLIENT_ID = os.environ.get("STRAVA_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("STRAVA_CLIENT_SECRET")
+REDIRECT_URI = os.environ.get("REDIRECT_URI")
 
 
 @app.route("/")
