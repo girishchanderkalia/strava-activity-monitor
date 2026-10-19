@@ -1,10 +1,20 @@
-from github_storage import load_athletes
+from github_storage import (
+    load_athletes,
+    load_challenge
+)
+
 import requests
 import os
-from datetime import datetime, timezone
 
-CLIENT_ID = os.environ.get("STRAVA_CLIENT_ID")
-CLIENT_SECRET = os.environ.get("STRAVA_CLIENT_SECRET")
+from datetime import datetime, timedelta
+
+CLIENT_ID = os.environ.get(
+    "STRAVA_CLIENT_ID"
+)
+
+CLIENT_SECRET = os.environ.get(
+    "STRAVA_CLIENT_SECRET"
+)
 
 
 def get_access_token(refresh_token):
@@ -28,9 +38,36 @@ def build_leaderboard():
 
     athletes, _ = load_athletes()
 
-    leaderboard = []
+    challenge = load_challenge()
+
+    challenge_name = challenge["name"]
+
+    start_date = datetime.strptime(
+        challenge["start_date"],
+        "%Y-%m-%d"
+    )
+
+    if challenge["end_date"]:
+
+        end_date = datetime.strptime(
+            challenge["end_date"],
+            "%Y-%m-%d"
+        )
+
+    else:
+
+        end_date = (
+            start_date +
+            timedelta(days=30)
+        )
 
     today = datetime.now().date()
+
+    days_remaining = (
+        end_date.date() - today
+    ).days
+
+    leaderboard = []
 
     for athlete in athletes:
 
@@ -49,13 +86,13 @@ def build_leaderboard():
             }
         )
 
+        response.raise_for_status()
+
         activities = response.json()
 
         today_km = 0
-        month_km = 0
 
-        current_month = datetime.now().month
-        current_year = datetime.now().year
+        challenge_km = 0
 
         for activity in activities:
 
@@ -64,12 +101,18 @@ def build_leaderboard():
                 activity.get("type")
             )
 
-            if sport not in ["Walk", "Hike"]:
+            if sport not in [
+                "Walk",
+                "Hike"
+            ]:
                 continue
 
             activity_date = datetime.fromisoformat(
                 activity["start_date_local"]
-                .replace("Z", "+00:00")
+                .replace(
+                    "Z",
+                    "+00:00"
+                )
             )
 
             distance_km = (
@@ -77,13 +120,13 @@ def build_leaderboard():
             )
 
             if (
-                activity_date.month ==
-                current_month
-                and
-                activity_date.year ==
-                current_year
+                start_date.date()
+                <=
+                activity_date.date()
+                <=
+                end_date.date()
             ):
-                month_km += distance_km
+                challenge_km += distance_km
 
             if activity_date.date() == today:
                 today_km += distance_km
@@ -91,17 +134,45 @@ def build_leaderboard():
         leaderboard.append(
             {
                 "name":
-                f"{athlete['firstname']} {athlete['lastname']}",
+                f"{athlete['firstname']} "
+                f"{athlete['lastname']}",
+
                 "today_km":
-                round(today_km, 1),
+                round(
+                    today_km,
+                    1
+                ),
+
                 "month_km":
-                round(month_km, 1)
+                round(
+                    challenge_km,
+                    1
+                )
             }
         )
 
-        leaderboard.sort(
-            key=lambda x: x["month_km"],
-            reverse=True
-        )
+    leaderboard.sort(
+        key=lambda x: x["month_km"],
+        reverse=True
+    )
 
-    return leaderboard
+    return {
+        "challenge_name":
+        challenge_name,
+
+        "start_date":
+        start_date.strftime(
+            "%d %b %Y"
+        ),
+
+        "end_date":
+        end_date.strftime(
+            "%d %b %Y"
+        ),
+
+        "days_remaining":
+        days_remaining,
+
+        "leaderboard":
+        leaderboard
+    }

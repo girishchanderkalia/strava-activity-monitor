@@ -61,3 +61,28 @@ def save_athletes(athletes, sha):
     )
 
     r.raise_for_status()
+
+def load_challenge():
+
+    import json
+    import base64
+
+    url = (
+        f"https://api.github.com/repos/"
+        f"{OWNER}/{REPO}/contents/data/challenge.json"
+    )
+
+    r = requests.get(
+        url,
+        headers=headers
+    )
+
+    r.raise_for_status()
+
+    data = r.json()
+
+    content = base64.b64decode(
+        data["content"]
+    ).decode()
+
+    return json.loads(content)

@@ -3,7 +3,14 @@ from leaderboard import build_leaderboard
 
 def render_dashboard():
 
-    athletes = build_leaderboard()
+    data = build_leaderboard()
+
+    challenge_name = data["challenge_name"]
+    start_date = data["start_date"]
+    end_date = data["end_date"]
+    days_remaining = data["days_remaining"]
+
+    athletes = data["leaderboard"]
 
     rows = ""
 
@@ -64,36 +71,95 @@ def render_dashboard():
     <body class="container mt-4">
 
       <h1>
-        🚶 Walking Challenge
+        🚶 {challenge_name}
       </h1>
+
+      <p class="text-muted">
+        {start_date}
+        →
+        {end_date}
+      </p>
 
       <div class="row mb-4">
 
         <div class="col">
+
             <div class="card">
+
                 <div class="card-body">
-                    <h5>🏆 Leader</h5>
-                    <h3>{leader}</h3>
+
+                    <h5>
+                        🏆 Leader
+                    </h5>
+
+                    <h3>
+                        {leader}
+                    </h3>
+
                 </div>
+
             </div>
+
         </div>
 
         <div class="col">
+
             <div class="card">
+
                 <div class="card-body">
-                    <h5>👥 Participants</h5>
-                    <h3>{participants}</h3>
+
+                    <h5>
+                        👥 Participants
+                    </h5>
+
+                    <h3>
+                        {participants}
+                    </h3>
+
                 </div>
+
             </div>
+
         </div>
 
         <div class="col">
+
             <div class="card">
+
                 <div class="card-body">
-                    <h5>🚶 Group KM</h5>
-                    <h3>{total_distance}</h3>
+
+                    <h5>
+                        🚶 Group KM
+                    </h5>
+
+                    <h3>
+                        {total_distance}
+                    </h3>
+
                 </div>
+
             </div>
+
+        </div>
+
+        <div class="col">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h5>
+                        📅 Days Left
+                    </h5>
+
+                    <h3>
+                        {days_remaining}
+                    </h3>
+
+                </div>
+
+            </div>
+
         </div>
 
       </div>
@@ -101,21 +167,31 @@ def render_dashboard():
       <table class="table table-striped">
 
         <thead>
+
             <tr>
+
                 <th>Rank</th>
+
                 <th>Name</th>
+
                 <th>Today KM</th>
-                <th>Month KM</th>
+
+                <th>Challenge KM</th>
+
             </tr>
+
         </thead>
 
         <tbody>
+
             {rows}
+
         </tbody>
 
       </table>
 
     </body>
+
     </html>
     """
 
