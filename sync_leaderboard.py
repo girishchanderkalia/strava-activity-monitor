@@ -1,5 +1,6 @@
 from leaderboard import build_leaderboard
 from github_storage import save_leaderboard_cache
+
 from datetime import datetime
 
 leaderboard = build_leaderboard()
