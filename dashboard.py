@@ -468,25 +468,25 @@ def render_dashboard():
                 }
             );
 
-        if (activityDay === today) {
+        if (activityDay === today) {{
 
             return "Today " + time;
 
-        }
+        }}
 
-        if (activityDay === yesterday) {
+        if (activityDay === yesterday) {{
 
             return "Yesterday " + time;
 
-        }
+        }}
 
         return date.toLocaleDateString(
             'en-GB',
-            {
+            {{
                 day: '2-digit',
                 month: 'short',
                 year: 'numeric'
-            }
+            }}
         ) + " " + time;
     }}
 
