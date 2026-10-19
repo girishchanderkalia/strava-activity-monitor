@@ -172,17 +172,33 @@ def build_leaderboard():
         reverse=True
     )
 
-    today_champion = max(
-        leaderboard,
-        key=lambda x: x["today_km"],
-        default=None
-    )
+    today_champion = None
 
-    streak_leader = max(
-        leaderboard,
-        key=lambda x: x["streak"],
-        default=None
-    )
+    active_today = [
+        a for a in leaderboard
+        if a["today_km"] > 0
+    ]
+
+    if active_today:
+
+        today_champion = max(
+            active_today,
+            key=lambda x: x["today_km"]
+        )
+
+    streak_leader = None
+
+    active_streaks = [
+        a for a in leaderboard
+        if a["streak"] > 0
+    ]
+
+    if active_streaks:
+
+        streak_leader = max(
+            active_streaks,
+            key=lambda x: x["streak"]
+        )
 
     days_remaining = (
         end_date.date() - today

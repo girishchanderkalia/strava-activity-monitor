@@ -145,11 +145,19 @@ rel="stylesheet">
 </h5>
 
 <p>
-{today_champion['name']}
+{
+    today_champion["name"]
+    if today_champion
+    else "No walks today"
+}
 </p>
 
 <strong>
-{today_champion['today_km']} km
+{
+    f"{today_champion['today_km']} km"
+    if today_champion
+    else "-"
+}
 </strong>
 
 </div>
@@ -165,11 +173,19 @@ rel="stylesheet">
 </h5>
 
 <p>
-{streak_leader['name']}
+{
+    streak_leader["name"]
+    if streak_leader
+    else "No active streak"
+}
 </p>
 
 <strong>
-{streak_leader['streak']} days
+{
+    f"{streak_leader['streak']} days"
+    if streak_leader
+    else "-"
+}
 </strong>
 
 </div>
