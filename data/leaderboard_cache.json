@@ -39,6 +39,13 @@
       "month_km": 6.8,
       "goal_percent": 6.8,
       "streak": 2
+    },
+    {
+      "name": "yati sharma",
+      "today_km": 0,
+      "month_km": 6.0,
+      "goal_percent": 6.0,
+      "streak": 0
     }
   ],
   "recent_activities": [
@@ -59,6 +66,12 @@
       "distance": 3.1,
       "date": "2026-10-19T11:51:30Z",
       "title": "Day2"
+    },
+    {
+      "name": "yati sharma",
+      "distance": 6.0,
+      "date": "2026-10-18T19:00:27Z",
+      "title": "Yati and dishti walk"
     },
     {
       "name": "Deepika  Adyansh",
@@ -95,13 +108,7 @@
       "distance": 2.4,
       "date": "2026-10-12T12:15:24Z",
       "title": "Lunch Walk"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 1.9,
-      "date": "2026-10-06T13:27:30Z",
-      "title": "Afternoon Walk"
     }
   ],
-  "updated_at": "19 Oct 2026 15:41"
+  "updated_at": "19 Oct 2026 15:51"
 }
