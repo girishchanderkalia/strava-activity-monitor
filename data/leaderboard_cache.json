@@ -1,0 +1,25 @@
+{
+  "challenge_name": "30 Day Walking Challenge",
+  "goal_km": 100,
+  "start_date": "18 Oct 2026",
+  "end_date": "17 Nov 2026",
+  "days_remaining": 29,
+  "today_champion": null,
+  "streak_leader": null,
+  "leaderboard": [
+    {
+      "name": "Girish Chander Kalia",
+      "today_km": 0,
+      "month_km": 10.8,
+      "goal_percent": 10.8,
+      "streak": 0
+    },
+    {
+      "name": "tripti kalia",
+      "today_km": 0,
+      "month_km": 6.9,
+      "goal_percent": 6.9,
+      "streak": 0
+    }
+  ]
+}
