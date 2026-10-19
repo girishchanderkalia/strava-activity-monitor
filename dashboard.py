@@ -79,30 +79,40 @@ def render_dashboard():
     )
 
     activity_rows = ""
+    if not recent_activities:
 
-    for activity in recent_activities:
-
-        activity_rows += f"""
+        activity_rows = """
         <div class="list-group-item">
-
-            <strong>
-            {activity['name']}
-            </strong>
-
-            <br>
-
-            🚶 {activity['distance']} km
-
-            <br>
-
-            <small class="text-muted">
-
-            {activity['title']}
-
-            </small>
-
+            No recent activities found.
         </div>
         """
+
+    if recent_activities:
+
+        activity_rows = ""
+        for activity in recent_activities:
+
+            activity_rows += f"""
+            <div class="list-group-item">
+
+                <strong>
+                {activity['name']}
+                </strong>
+
+                <br>
+
+                🚶 {activity['distance']} km
+
+                <br>
+
+                <small class="text-muted">
+
+                {activity['title']}
+
+                </small>
+
+            </div>
+            """
 
     html = f"""
 <html>
@@ -236,76 +246,87 @@ Last Updated:
 <div class="row g-3 mb-4">
 
 <div class="col-md-6">
-<div class="card border-success">
-<div class="card-body">
+<div class="row g-3 mb-4">
 
-<h5>
-🏆 Today's Champion
-</h5>
+    <div class="col-md-6">
 
-<p>
-{
-    today_champion["name"]
-    if today_champion
-    else "No walks today"
-}
-</p>
+        <div class="card border-success">
 
-<strong>
-{
-    f"{today_champion['today_km']} km"
-    if today_champion
-    else "-"
-}
-</strong>
+            <div class="card-body">
 
-</div>
-</div>
+                <h5>
+                🏆 Today's Champion
+                </h5>
+
+                <p>
+                {
+                    today_champion["name"]
+                    if today_champion
+                    else "No walks today"
+                }
+                </p>
+
+                <strong>
+                {
+                    f"{today_champion['today_km']} km"
+                    if today_champion
+                    else "-"
+                }
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card border-warning">
+
+            <div class="card-body">
+
+                <h5>
+                🔥 Streak Leader
+                </h5>
+
+                <p>
+                {
+                    streak_leader["name"]
+                    if streak_leader
+                    else "No active streak"
+                }
+                </p>
+
+                <strong>
+                {
+                    f"{streak_leader['streak']} days"
+                    if streak_leader
+                    else "-"
+                }
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="card mb-4">
 
     <div class="card-header">
 
-    🚶 Recent Activity
+        🚶 Recent Activity
 
     </div>
 
     <div class="list-group list-group-flush">
 
-    {activity_rows}
+        {activity_rows}
 
     </div>
-
-</div>
-
-<div class="col-md-6">
-<div class="card border-warning">
-<div class="card-body">
-
-<h5>
-🔥 Streak Leader
-</h5>
-
-<p>
-{
-    streak_leader["name"]
-    if streak_leader
-    else "No active streak"
-}
-</p>
-
-<strong>
-{
-    f"{streak_leader['streak']} days"
-    if streak_leader
-    else "-"
-}
-</strong>
-
-</div>
-</div>
-</div>
 
 </div>
 
