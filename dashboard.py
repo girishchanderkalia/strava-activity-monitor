@@ -470,13 +470,13 @@ function formatDate(dateString) {{
 
     if (activityDay === today) {
 
-        return `Today ${time}`;
+        return `Today ${{time}}`;
 
     }
 
     if (activityDay === yesterday) {
 
-        return `Yesterday ${time}`;
+        return `Yesterday ${{time}}`;
 
     }
 
@@ -487,7 +487,7 @@ function formatDate(dateString) {{
             month: 'short',
             year: 'numeric'
         }
-    ) + ` ${time}`;
+    ) + ` ${{time} }`;
 }}
 
 function showActivity(name) {{
@@ -504,7 +504,7 @@ function showActivity(name) {{
             <div class="mb-3">
 
                 <strong>
-                    ${{activity.title}}
+                    ${activity.title}
                 </strong>
 
                 <br>
