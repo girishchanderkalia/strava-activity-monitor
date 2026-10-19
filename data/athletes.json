@@ -1,14 +1,1 @@
-[
-  {
-    "athlete_id": 80536901,
-    "firstname": "Girish Chander",
-    "lastname": "Kalia",
-    "refresh_token": "7f0740cd602d88c3a219342aa9fc13c4b34982e5"
-  },
-  {
-    "athlete_id": 999999,
-    "firstname": "Test",
-    "lastname": "User",
-    "refresh_token": "dummy"
-  }
-]
+[]

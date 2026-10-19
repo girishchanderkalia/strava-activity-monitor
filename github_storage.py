@@ -49,7 +49,7 @@ def save_athletes(athletes, sha):
     ).decode()
 
     payload = {
-        "message": "Update athletes",
+        "message": "bot: Update athletes",
         "content": content,
         "sha": sha
     }
