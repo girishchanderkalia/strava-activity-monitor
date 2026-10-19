@@ -3,3 +3,6 @@ __pycache__/
 __pycache__/
 *.pyc
 .env
+data/leaderboard_cache.json
+data/athletes.json
+data/activities.json

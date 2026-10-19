@@ -1,9 +1,10 @@
-from leaderboard import build_leaderboard
-
+from github_storage import (
+    load_leaderboard_cache
+)
 
 def render_dashboard():
 
-    data = build_leaderboard()
+    data = load_leaderboard_cache()
 
     athletes = data["leaderboard"]
 

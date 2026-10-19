@@ -86,3 +86,71 @@ def load_challenge():
     ).decode()
 
     return json.loads(content)
+
+def save_leaderboard_cache(data):
+
+    path = "data/leaderboard_cache.json"
+
+    url = (
+        f"https://api.github.com/repos/"
+        f"{OWNER}/{REPO}/contents/{path}"
+    )
+
+    # Check if file already exists
+
+    r = requests.get(
+        url,
+        headers=headers
+    )
+
+    sha = None
+
+    if r.status_code == 200:
+        sha = r.json()["sha"]
+
+    content = base64.b64encode(
+        json.dumps(
+            data,
+            indent=2
+        ).encode()
+    ).decode()
+
+    payload = {
+        "message": "bot: update leaderboard cache",
+        "content": content
+    }
+
+    if sha:
+        payload["sha"] = sha
+
+    response = requests.put(
+        url,
+        headers=headers,
+        json=payload
+    )
+
+    response.raise_for_status()
+
+def load_leaderboard_cache():
+
+    path = "data/leaderboard_cache.json"
+
+    url = (
+        f"https://api.github.com/repos/"
+        f"{OWNER}/{REPO}/contents/{path}"
+    )
+
+    r = requests.get(
+        url,
+        headers=headers
+    )
+
+    r.raise_for_status()
+
+    data = r.json()
+
+    content = base64.b64decode(
+        data["content"]
+    ).decode()
+
+    return json.loads(content)
