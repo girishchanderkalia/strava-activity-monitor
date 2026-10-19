@@ -99,9 +99,9 @@ def build_leaderboard():
             }
         )
 
-    leaderboard.sort(
-        key=lambda x: x["month_km"],
-        reverse=True
-    )
+        leaderboard.sort(
+            key=lambda x: x["month_km"],
+            reverse=True
+        )
 
     return leaderboard
