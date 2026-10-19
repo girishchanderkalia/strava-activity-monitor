@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Ping Render
         run: |
-          curl https://your-app.onrender.com/leaderboard
+          curl https://strava-activity-monitor.onrender.com/leaderboard
