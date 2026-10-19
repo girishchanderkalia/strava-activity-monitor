@@ -5,12 +5,18 @@ def render_dashboard():
 
     data = build_leaderboard()
 
+    athletes = data["leaderboard"]
+
     challenge_name = data["challenge_name"]
+    goal_km = data["goal_km"]
+
     start_date = data["start_date"]
     end_date = data["end_date"]
+
     days_remaining = data["days_remaining"]
 
-    athletes = data["leaderboard"]
+    today_champion = data["today_champion"]
+    streak_leader = data["streak_leader"]
 
     rows = ""
 
@@ -34,6 +40,8 @@ def render_dashboard():
             <td>{athlete['name']}</td>
             <td>{athlete['today_km']}</td>
             <td>{athlete['month_km']}</td>
+            <td>🔥 {athlete['streak']}</td>
+            <td>{athlete['goal_percent']}%</td>
         </tr>
         """
 
@@ -54,145 +62,150 @@ def render_dashboard():
     )
 
     html = f"""
-    <html>
+<html>
 
-    <head>
+<head>
 
-      <title>
-        Walking Challenge
-      </title>
+<title>Walking Challenge</title>
 
-      <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet">
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
 
-    </head>
+</head>
 
-    <body class="container mt-4">
+<body class="container mt-4">
 
-      <h1>
-        🚶 {challenge_name}
-      </h1>
+<h1>
+🚶 {challenge_name}
+</h1>
 
-      <p class="text-muted">
-        {start_date}
-        →
-        {end_date}
-      </p>
+<p class="text-muted">
+{start_date} →
+{end_date}
+</p>
 
-      <div class="row mb-4">
+<div class="row g-3 mb-4">
 
-        <div class="col">
+<div class="col-md-4">
+<div class="card">
+<div class="card-body">
+<h6>🏆 Leader</h6>
+<h4>{leader}</h4>
+</div>
+</div>
+</div>
 
-            <div class="card">
+<div class="col-md-2">
+<div class="card">
+<div class="card-body">
+<h6>👥 Participants</h6>
+<h4>{participants}</h4>
+</div>
+</div>
+</div>
 
-                <div class="card-body">
+<div class="col-md-2">
+<div class="card">
+<div class="card-body">
+<h6>🚶 Group KM</h6>
+<h4>{total_distance}</h4>
+</div>
+</div>
+</div>
 
-                    <h5>
-                        🏆 Leader
-                    </h5>
+<div class="col-md-2">
+<div class="card">
+<div class="card-body">
+<h6>📅 Days Left</h6>
+<h4>{days_remaining}</h4>
+</div>
+</div>
+</div>
 
-                    <h3>
-                        {leader}
-                    </h3>
+<div class="col-md-2">
+<div class="card">
+<div class="card-body">
+<h6>🎯 Goal</h6>
+<h4>{goal_km}</h4>
+</div>
+</div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+<div class="row g-3 mb-4">
 
-        </div>
+<div class="col-md-6">
+<div class="card border-success">
+<div class="card-body">
 
-        <div class="col">
+<h5>
+🏆 Today's Champion
+</h5>
 
-            <div class="card">
+<p>
+{today_champion['name']}
+</p>
 
-                <div class="card-body">
+<strong>
+{today_champion['today_km']} km
+</strong>
 
-                    <h5>
-                        👥 Participants
-                    </h5>
+</div>
+</div>
+</div>
 
-                    <h3>
-                        {participants}
-                    </h3>
+<div class="col-md-6">
+<div class="card border-warning">
+<div class="card-body">
 
-                </div>
+<h5>
+🔥 Streak Leader
+</h5>
 
-            </div>
+<p>
+{streak_leader['name']}
+</p>
 
-        </div>
+<strong>
+{streak_leader['streak']} days
+</strong>
 
-        <div class="col">
+</div>
+</div>
+</div>
 
-            <div class="card">
+</div>
 
-                <div class="card-body">
+<table class="table table-striped">
 
-                    <h5>
-                        🚶 Group KM
-                    </h5>
+<thead>
 
-                    <h3>
-                        {total_distance}
-                    </h3>
+<tr>
 
-                </div>
+<th>Rank</th>
+<th>Name</th>
+<th>Today KM</th>
+<th>Challenge KM</th>
+<th>🔥 Streak</th>
+<th>🎯 Goal %</th>
 
-            </div>
+</tr>
 
-        </div>
+</thead>
 
-        <div class="col">
+<tbody>
 
-            <div class="card">
+{rows}
 
-                <div class="card-body">
+</tbody>
 
-                    <h5>
-                        📅 Days Left
-                    </h5>
+</table>
 
-                    <h3>
-                        {days_remaining}
-                    </h3>
+</body>
 
-                </div>
-
-            </div>
-
-        </div>
-
-      </div>
-
-      <table class="table table-striped">
-
-        <thead>
-
-            <tr>
-
-                <th>Rank</th>
-
-                <th>Name</th>
-
-                <th>Today KM</th>
-
-                <th>Challenge KM</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            {rows}
-
-        </tbody>
-
-      </table>
-
-    </body>
-
-    </html>
-    """
+</html>
+"""
 
     return html

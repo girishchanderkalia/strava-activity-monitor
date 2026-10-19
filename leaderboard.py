@@ -41,6 +41,7 @@ def build_leaderboard():
     challenge = load_challenge()
 
     challenge_name = challenge["name"]
+    goal_km = challenge["goal_km"]
 
     start_date = datetime.strptime(
         challenge["start_date"],
@@ -62,10 +63,6 @@ def build_leaderboard():
         )
 
     today = datetime.now().date()
-
-    days_remaining = (
-        end_date.date() - today
-    ).days
 
     leaderboard = []
 
@@ -91,8 +88,9 @@ def build_leaderboard():
         activities = response.json()
 
         today_km = 0
-
         challenge_km = 0
+
+        walk_days = set()
 
         for activity in activities:
 
@@ -109,14 +107,15 @@ def build_leaderboard():
 
             activity_date = datetime.fromisoformat(
                 activity["start_date_local"]
-                .replace(
-                    "Z",
-                    "+00:00"
-                )
+                .replace("Z", "+00:00")
             )
 
             distance_km = (
                 activity["distance"] / 1000
+            )
+
+            walk_days.add(
+                activity_date.date()
             )
 
             if (
@@ -131,6 +130,23 @@ def build_leaderboard():
             if activity_date.date() == today:
                 today_km += distance_km
 
+        streak = 0
+
+        check_day = today
+
+        while check_day in walk_days:
+
+            streak += 1
+
+            check_day -= timedelta(days=1)
+
+        goal_percent = round(
+            (
+                challenge_km / goal_km
+            ) * 100,
+            1
+        )
+
         leaderboard.append(
             {
                 "name":
@@ -138,16 +154,16 @@ def build_leaderboard():
                 f"{athlete['lastname']}",
 
                 "today_km":
-                round(
-                    today_km,
-                    1
-                ),
+                round(today_km, 1),
 
                 "month_km":
-                round(
-                    challenge_km,
-                    1
-                )
+                round(challenge_km, 1),
+
+                "goal_percent":
+                goal_percent,
+
+                "streak":
+                streak
             }
         )
 
@@ -156,9 +172,29 @@ def build_leaderboard():
         reverse=True
     )
 
+    today_champion = max(
+        leaderboard,
+        key=lambda x: x["today_km"],
+        default=None
+    )
+
+    streak_leader = max(
+        leaderboard,
+        key=lambda x: x["streak"],
+        default=None
+    )
+
+    days_remaining = (
+        end_date.date() - today
+    ).days
+
     return {
+
         "challenge_name":
         challenge_name,
+
+        "goal_km":
+        goal_km,
 
         "start_date":
         start_date.strftime(
@@ -172,6 +208,12 @@ def build_leaderboard():
 
         "days_remaining":
         days_remaining,
+
+        "today_champion":
+        today_champion,
+
+        "streak_leader":
+        streak_leader,
 
         "leaderboard":
         leaderboard
