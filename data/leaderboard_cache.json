@@ -3,42 +3,30 @@
   "goal_km": 100,
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
-  "days_remaining": 29,
-  "today_champion": {
-    "name": "Girish Chander Kalia",
-    "today_km": 3.1,
-    "month_km": 13.9,
-    "goal_percent": 13.9,
-    "streak": 2
-  },
-  "streak_leader": {
-    "name": "Girish Chander Kalia",
-    "today_km": 3.1,
-    "month_km": 13.9,
-    "goal_percent": 13.9,
-    "streak": 2
-  },
+  "days_remaining": 28,
+  "today_champion": null,
+  "streak_leader": null,
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
-      "today_km": 3.1,
+      "today_km": 0,
       "month_km": 13.9,
       "goal_percent": 13.9,
-      "streak": 2
+      "streak": 0
     },
     {
       "name": "tripti kalia",
-      "today_km": 2.7,
+      "today_km": 0,
       "month_km": 9.6,
       "goal_percent": 9.6,
-      "streak": 2
+      "streak": 0
     },
     {
       "name": "Deepika  Adyansh",
-      "today_km": 2.8,
+      "today_km": 0,
       "month_km": 6.8,
       "goal_percent": 6.8,
-      "streak": 2
+      "streak": 0
     },
     {
       "name": "yati sharma",
@@ -49,10 +37,10 @@
     },
     {
       "name": "MEENAKSHI SHARMA",
-      "today_km": 1.4,
+      "today_km": 0,
       "month_km": 4.9,
       "goal_percent": 4.9,
-      "streak": 2
+      "streak": 0
     }
   ],
   "recent_activities": [
@@ -117,5 +105,5 @@
       "title": "Morning Walk"
     }
   ],
-  "updated_at": "19 Oct 2026 23:52"
+  "updated_at": "20 Oct 2026 00:42"
 }
