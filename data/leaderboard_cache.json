@@ -4,8 +4,20 @@
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 28,
-  "today_champion": null,
-  "streak_leader": null,
+  "today_champion": {
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 1.9,
+    "month_km": 6.8,
+    "goal_percent": 6.8,
+    "streak": 3
+  },
+  "streak_leader": {
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 1.9,
+    "month_km": 6.8,
+    "goal_percent": 6.8,
+    "streak": 3
+  },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
@@ -29,21 +41,27 @@
       "streak": 0
     },
     {
+      "name": "MEENAKSHI SHARMA",
+      "today_km": 1.9,
+      "month_km": 6.8,
+      "goal_percent": 6.8,
+      "streak": 3
+    },
+    {
       "name": "yati sharma",
       "today_km": 0,
       "month_km": 6.0,
       "goal_percent": 6.0,
       "streak": 0
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "today_km": 0,
-      "month_km": 4.9,
-      "goal_percent": 4.9,
-      "streak": 0
     }
   ],
   "recent_activities": [
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 1.9,
+      "date": "2026-10-20T07:27:17Z",
+      "title": "Morning Walk"
+    },
     {
       "name": "MEENAKSHI SHARMA",
       "distance": 1.4,
@@ -97,13 +115,7 @@
       "distance": 10.8,
       "date": "2026-10-18T10:37:47Z",
       "title": "Walking challenge day1"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 2.5,
-      "date": "2026-10-14T10:57:50Z",
-      "title": "Morning Walk"
     }
   ],
-  "updated_at": "20 Oct 2026 02:28"
+  "updated_at": "20 Oct 2026 02:49"
 }
