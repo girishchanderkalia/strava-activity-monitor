@@ -60,36 +60,28 @@ def render_dashboard():
         rows += f"""
         <tr>
 
-            <td>{rank}</td>
+            <td class="d-none d-md-table-cell">{rank}</td>
 
-            <td>{athlete['name']}</td>
+            <td class="text-nowrap">{athlete['name']}</td>
 
-            <td>{athlete['today_km']}</td>
+            <td class="d-none d-md-table-cell">{athlete['today_km']}</td>
 
-            <td>{athlete['month_km']}</td>
+            <td class="d-none d-md-table-cell">{athlete['month_km']}</td>
 
-            <td>
-                🔥 {athlete['streak']}
-            </td>
+           <td class="d-none d-md-table-cell">🔥 {athlete['streak']}  </td>
 
-            <td>
-
+            <td class="d-none d-md-table-cell">
                 <div class="progress">
-
                     <div
                         class="progress-bar"
                         role="progressbar"
                         style="width: {min(athlete['goal_percent'], 100)}%;">
-
                         {athlete['goal_percent']}%
-
                     </div>
-
                 </div>
-
             </td>
 
-            <td>
+            <td class="d-none d-md-table-cell">
 
                 <button
                     class="btn btn-sm btn-outline-primary"
@@ -148,7 +140,7 @@ def render_dashboard():
     <div class="container-fluid">
 
     <a
-    class="navbar-brand fw-bold"
+    class="navbar-brand fw-bold mb-0"
     href="/leaderboard">
 
     🚶 Walking Challenge
@@ -208,11 +200,11 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h6>🏆 Leader</h6>
 
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mb-0">
                     {leader}
                     </h3>
 
@@ -226,7 +218,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h6>👥 Participants</h6>
 
@@ -244,11 +236,11 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h6>🚶 Group KM</h6>
 
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mb-0">
                     {total_distance}
                     </h3>
 
@@ -262,11 +254,11 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h6>📅 Days Left</h6>
 
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mb-0">
                     {days_remaining}
                     </h3>
 
@@ -284,7 +276,7 @@ def render_dashboard():
 
                     <h6>🎯 Goal</h6>
 
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mb-0">
                     {goal_km}
                     </h3>
 
@@ -302,7 +294,7 @@ def render_dashboard():
 
             <div class="card border-success">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h5>
                     🏆 Today's Champion
@@ -334,7 +326,7 @@ def render_dashboard():
 
             <div class="card border-warning">
 
-                <div class="card-body">
+                <div class="card-body p-2">
 
                     <h5>
                     🔥 Streak Leader
@@ -374,11 +366,11 @@ def render_dashboard():
 
     <th>Rank</th>
     <th>Name</th>
-    <th>Today KM</th>
-    <th>Challenge KM</th>
-    <th>🔥 Streak</th>
-    <th>🎯 Goal %</th>
-    <th>👣 Walks</th>
+    <th class="d-none d-md-table-cell">Today KM</th>
+    <th class="d-none d-md-table-cell">Challenge KM</th>
+    <th class="d-none d-md-table-cell">🔥 Streak</th>
+    <th class="d-none d-md-table-cell">🎯 Goal %</th>
+    <th class="d-none d-md-table-cell">👣 Walks</th>
 
     </tr>
 
