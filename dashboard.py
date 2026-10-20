@@ -60,16 +60,21 @@ def render_dashboard():
         rows += f"""
         <tr>
 
-            <td class="d-none d-md-table-cell">{rank}</td>
+            <td>{rank}</td>
 
             <td class="text-nowrap">{athlete['name']}</td>
+            <td>{athlete['month_km']}</td>
+            <td>{athlete['today_km']}</td>
 
-            <td class="d-none d-md-table-cell">{athlete['today_km']}</td>
-
-            <td class="d-none d-md-table-cell">{athlete['month_km']}</td>
+            <td>
+                <button
+                    class="btn btn-sm btn-outline-primary"
+                    onclick="showActivity('{athlete['name']}')">
+                    👣 Walks
+                </button>
+            </td>
 
            <td class="d-none d-md-table-cell">🔥 {athlete['streak']}  </td>
-
             <td class="d-none d-md-table-cell">
                 <div class="progress">
                     <div
@@ -81,17 +86,7 @@ def render_dashboard():
                 </div>
             </td>
 
-            <td class="d-none d-md-table-cell">
-
-                <button
-                    class="btn btn-sm btn-outline-primary"
-                    onclick="showActivity('{athlete['name']}')">
-
-                    👣 Walks
-
-                </button>
-
-            </td>
+            
 
         </tr>
         """
@@ -200,7 +195,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
                     <h6>🏆 Leader</h6>
 
@@ -218,7 +213,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
                     <h6>👥 Participants</h6>
 
@@ -236,7 +231,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
                     <h6>🚶 Group KM</h6>
 
@@ -254,7 +249,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
                     <h6>📅 Days Left</h6>
 
@@ -272,7 +267,7 @@ def render_dashboard():
 
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body p-2 text-center">
 
                     <h6>🎯 Goal</h6>
 
@@ -294,13 +289,13 @@ def render_dashboard():
 
             <div class="card border-success">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
-                    <h5>
+                    <h6 class="mb-1">
                     🏆 Today's Champion
-                    </h5>
+                    </h6>
 
-                    <p>
+                    <p class="mb-1">
                     {
                         today_champion["name"]
                         if today_champion
@@ -326,11 +321,11 @@ def render_dashboard():
 
             <div class="card border-warning">
 
-                <div class="card-body p-2">
+                <div class="card-body p-2 text-center">
 
-                    <h5>
+                    <h6 class="mb-1">
                     🔥 Streak Leader
-                    </h5>
+                    </h6>
 
                     <p>
                     {
@@ -366,11 +361,12 @@ def render_dashboard():
 
     <th>Rank</th>
     <th>Name</th>
-    <th class="d-none d-md-table-cell">Today KM</th>
-    <th class="d-none d-md-table-cell">Challenge KM</th>
+    <th>Challenge KM</th>
+    <th>Today KM</th>
+    <th>👣 Walks</th>
     <th class="d-none d-md-table-cell">🔥 Streak</th>
     <th class="d-none d-md-table-cell">🎯 Goal %</th>
-    <th class="d-none d-md-table-cell">👣 Walks</th>
+    
 
     </tr>
 
