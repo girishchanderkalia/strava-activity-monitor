@@ -5,33 +5,33 @@
   "end_date": "17 Nov 2026",
   "days_remaining": 27,
   "today_champion": {
-    "name": "MEENAKSHI SHARMA",
-    "today_km": 2.5,
-    "month_km": 9.3,
-    "goal_percent": 9.3,
+    "name": "Girish Chander Kalia",
+    "today_km": 2.6,
+    "month_km": 20.3,
+    "goal_percent": 20.3,
     "streak": 4
   },
   "streak_leader": {
-    "name": "MEENAKSHI SHARMA",
-    "today_km": 2.5,
-    "month_km": 9.3,
-    "goal_percent": 9.3,
+    "name": "Girish Chander Kalia",
+    "today_km": 2.6,
+    "month_km": 20.3,
+    "goal_percent": 20.3,
     "streak": 4
   },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
-      "today_km": 0,
-      "month_km": 17.6,
-      "goal_percent": 17.6,
-      "streak": 0
+      "today_km": 2.6,
+      "month_km": 20.3,
+      "goal_percent": 20.3,
+      "streak": 4
     },
     {
       "name": "tripti kalia",
-      "today_km": 0,
-      "month_km": 12.8,
-      "goal_percent": 12.8,
-      "streak": 0
+      "today_km": 2.6,
+      "month_km": 15.5,
+      "goal_percent": 15.5,
+      "streak": 4
     },
     {
       "name": "MEENAKSHI SHARMA",
@@ -48,6 +48,13 @@
       "streak": 0
     },
     {
+      "name": "Manoj Sharma",
+      "today_km": 0,
+      "month_km": 6.3,
+      "goal_percent": 6.3,
+      "streak": 0
+    },
+    {
       "name": "yati sharma",
       "today_km": 0,
       "month_km": 6.0,
@@ -56,6 +63,18 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "Girish Chander Kalia",
+      "distance": 2.6,
+      "date": "2026-10-21T12:00:48Z",
+      "title": "Day 4"
+    },
+    {
+      "name": "tripti kalia",
+      "distance": 2.6,
+      "date": "2026-10-21T12:00:45Z",
+      "title": "Lunch Walk"
+    },
     {
       "name": "MEENAKSHI SHARMA",
       "distance": 2.5,
@@ -75,10 +94,22 @@
       "title": "Day3"
     },
     {
+      "name": "Manoj Sharma",
+      "distance": 1.5,
+      "date": "2026-10-20T09:15:34Z",
+      "title": "Morning Walk"
+    },
+    {
       "name": "MEENAKSHI SHARMA",
       "distance": 1.9,
       "date": "2026-10-20T07:27:17Z",
       "title": "Morning Walk"
+    },
+    {
+      "name": "Manoj Sharma",
+      "distance": 0.9,
+      "date": "2026-10-19T20:49:24Z",
+      "title": "Evening Walk"
     },
     {
       "name": "MEENAKSHI SHARMA",
@@ -91,31 +122,7 @@
       "distance": 2.8,
       "date": "2026-10-19T19:08:02Z",
       "title": "Evening Walk"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 2.7,
-      "date": "2026-10-19T11:52:08Z",
-      "title": "Lunch Walk"
-    },
-    {
-      "name": "Girish Chander Kalia",
-      "distance": 3.1,
-      "date": "2026-10-19T11:51:30Z",
-      "title": "Day2"
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "distance": 3.5,
-      "date": "2026-10-18T19:24:45Z",
-      "title": "Evening Walk"
-    },
-    {
-      "name": "yati sharma",
-      "distance": 6.0,
-      "date": "2026-10-18T19:00:27Z",
-      "title": "Yati and dishti walk"
     }
   ],
-  "updated_at": "21 Oct 2026 10:16"
+  "updated_at": "21 Oct 2026 10:42"
 }
