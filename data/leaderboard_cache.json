@@ -4,8 +4,20 @@
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 27,
-  "today_champion": null,
-  "streak_leader": null,
+  "today_champion": {
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 2.5,
+    "month_km": 9.3,
+    "goal_percent": 9.3,
+    "streak": 4
+  },
+  "streak_leader": {
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 2.5,
+    "month_km": 9.3,
+    "goal_percent": 9.3,
+    "streak": 4
+  },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
@@ -22,14 +34,14 @@
       "streak": 0
     },
     {
-      "name": "Deepika  Adyansh",
-      "today_km": 0,
-      "month_km": 6.8,
-      "goal_percent": 6.8,
-      "streak": 0
+      "name": "MEENAKSHI SHARMA",
+      "today_km": 2.5,
+      "month_km": 9.3,
+      "goal_percent": 9.3,
+      "streak": 4
     },
     {
-      "name": "MEENAKSHI SHARMA",
+      "name": "Deepika  Adyansh",
       "today_km": 0,
       "month_km": 6.8,
       "goal_percent": 6.8,
@@ -44,6 +56,12 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 2.5,
+      "date": "2026-10-21T09:05:03Z",
+      "title": "Inside the school Playground"
+    },
     {
       "name": "tripti kalia",
       "distance": 3.3,
@@ -97,13 +115,7 @@
       "distance": 6.0,
       "date": "2026-10-18T19:00:27Z",
       "title": "Yati and dishti walk"
-    },
-    {
-      "name": "Deepika  Adyansh",
-      "distance": 4.0,
-      "date": "2026-10-18T18:06:41Z",
-      "title": "Evening Walk"
     }
   ],
-  "updated_at": "21 Oct 2026 04:23"
+  "updated_at": "21 Oct 2026 04:44"
 }
