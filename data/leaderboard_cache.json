@@ -60,6 +60,13 @@
       "month_km": 6.0,
       "goal_percent": 6.0,
       "streak": 0
+    },
+    {
+      "name": "Rajni Bhardwaj ",
+      "today_km": 0,
+      "month_km": 3.7,
+      "goal_percent": 3.7,
+      "streak": 0
     }
   ],
   "recent_activities": [
@@ -123,6 +130,5 @@
       "date": "2026-10-19T20:49:24Z",
       "title": "Evening Walk"
     }
-  ],
-  "updated_at": "21 Oct 2026 15:16"
+  ]
 }
