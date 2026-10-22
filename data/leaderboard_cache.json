@@ -5,10 +5,10 @@
   "end_date": "17 Nov 2026",
   "days_remaining": 26,
   "today_champion": {
-    "name": "MEENAKSHI SHARMA",
-    "today_km": 6.8,
-    "month_km": 16.1,
-    "goal_percent": 16.1,
+    "name": "Manoj Sharma",
+    "today_km": 8.4,
+    "month_km": 20.2,
+    "goal_percent": 20.2,
     "streak": 5
   },
   "streak_leader": {
@@ -27,6 +27,13 @@
       "streak": 5
     },
     {
+      "name": "Manoj Sharma",
+      "today_km": 8.4,
+      "month_km": 20.2,
+      "goal_percent": 20.2,
+      "streak": 5
+    },
+    {
       "name": "MEENAKSHI SHARMA",
       "today_km": 6.8,
       "month_km": 16.1,
@@ -39,13 +46,6 @@
       "month_km": 15.5,
       "goal_percent": 15.5,
       "streak": 0
-    },
-    {
-      "name": "Manoj Sharma",
-      "today_km": 2.2,
-      "month_km": 14.0,
-      "goal_percent": 14.0,
-      "streak": 5
     },
     {
       "name": "Deepika  Adyansh",
@@ -77,6 +77,12 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "Manoj Sharma",
+      "distance": 6.2,
+      "date": "2026-10-22T21:08:17Z",
+      "title": "Night Walk"
+    },
     {
       "name": "Deepika  Adyansh",
       "distance": 0.5,
@@ -130,13 +136,7 @@
       "distance": 0.9,
       "date": "2026-10-21T20:06:56Z",
       "title": "Evening Walk"
-    },
-    {
-      "name": "Deepika  Adyansh",
-      "distance": 3.4,
-      "date": "2026-10-21T19:00:16Z",
-      "title": "Evening Walk"
     }
   ],
-  "updated_at": "22 Oct 2026 16:42"
+  "updated_at": "22 Oct 2026 16:54"
 }
