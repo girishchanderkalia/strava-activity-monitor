@@ -6,7 +6,7 @@ from github_storage import (
 import requests
 import os
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from github_storage import (
     load_leaderboard_cache
 )
@@ -236,6 +236,9 @@ def build_leaderboard():
     recent_activities = recent_activities[:10]
 
     return {
+
+        "updated_at":
+        datetime.now(timezone.utc).strftime("%d %b %Y %H:%M"),
 
         "challenge_name":
         challenge_name,
