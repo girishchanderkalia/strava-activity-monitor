@@ -13,9 +13,9 @@
   },
   "streak_leader": {
     "name": "Manoj Sharma",
-    "today_km": 1.4,
-    "month_km": 13.2,
-    "goal_percent": 13.2,
+    "today_km": 2.2,
+    "month_km": 14.0,
+    "goal_percent": 14.0,
     "streak": 5
   },
   "leaderboard": [
@@ -35,9 +35,9 @@
     },
     {
       "name": "Manoj Sharma",
-      "today_km": 1.4,
-      "month_km": 13.2,
-      "goal_percent": 13.2,
+      "today_km": 2.2,
+      "month_km": 14.0,
+      "goal_percent": 14.0,
       "streak": 5
     },
     {
@@ -49,10 +49,10 @@
     },
     {
       "name": "Deepika  Adyansh",
-      "today_km": 0,
-      "month_km": 11.0,
-      "goal_percent": 11.0,
-      "streak": 0
+      "today_km": 1.6,
+      "month_km": 12.6,
+      "goal_percent": 12.6,
+      "streak": 2
     },
     {
       "name": "yati sharma",
@@ -77,6 +77,24 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "Deepika  Adyansh",
+      "distance": 0.5,
+      "date": "2026-10-22T19:49:35Z",
+      "title": "Evening Walk"
+    },
+    {
+      "name": "Manoj Sharma",
+      "distance": 0.8,
+      "date": "2026-10-22T19:38:31Z",
+      "title": "Evening Walk"
+    },
+    {
+      "name": "Deepika  Adyansh",
+      "distance": 1.1,
+      "date": "2026-10-22T16:18:25Z",
+      "title": "Afternoon Walk"
+    },
     {
       "name": "MEENAKSHI SHARMA",
       "distance": 3.4,
@@ -118,25 +136,7 @@
       "distance": 2.6,
       "date": "2026-10-21T12:00:45Z",
       "title": "Lunch Walk"
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "distance": 2.5,
-      "date": "2026-10-21T09:05:03Z",
-      "title": "Inside the school Playground"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 3.3,
-      "date": "2026-10-20T11:36:16Z",
-      "title": "Lunch Walk"
-    },
-    {
-      "name": "Girish Chander Kalia",
-      "distance": 3.7,
-      "date": "2026-10-20T11:36:01Z",
-      "title": "Day3"
     }
   ],
-  "updated_at": "22 Oct 2026 14:17"
+  "updated_at": "22 Oct 2026 14:42"
 }
