@@ -4,8 +4,20 @@
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 26,
-  "today_champion": null,
-  "streak_leader": null,
+  "today_champion": {
+    "name": "Manoj Sharma",
+    "today_km": 1.4,
+    "month_km": 13.2,
+    "goal_percent": 13.2,
+    "streak": 5
+  },
+  "streak_leader": {
+    "name": "Manoj Sharma",
+    "today_km": 1.4,
+    "month_km": 13.2,
+    "goal_percent": 13.2,
+    "streak": 5
+  },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
@@ -23,10 +35,10 @@
     },
     {
       "name": "Manoj Sharma",
-      "today_km": 0,
-      "month_km": 11.8,
-      "goal_percent": 11.8,
-      "streak": 0
+      "today_km": 1.4,
+      "month_km": 13.2,
+      "goal_percent": 13.2,
+      "streak": 5
     },
     {
       "name": "Deepika  Adyansh",
@@ -55,9 +67,22 @@
       "month_km": 3.7,
       "goal_percent": 3.7,
       "streak": 0
+    },
+    {
+      "name": "Ratnakar  Bhardwaj ",
+      "today_km": 0,
+      "month_km": 0,
+      "goal_percent": 0.0,
+      "streak": 0
     }
   ],
   "recent_activities": [
+    {
+      "name": "Manoj Sharma",
+      "distance": 1.4,
+      "date": "2026-10-22T07:57:21Z",
+      "title": "Morning Walk"
+    },
     {
       "name": "Manoj Sharma",
       "distance": 5.5,
@@ -111,13 +136,7 @@
       "distance": 1.5,
       "date": "2026-10-20T09:15:34Z",
       "title": "Morning Walk"
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "distance": 1.9,
-      "date": "2026-10-20T07:27:17Z",
-      "title": "Morning Walk"
     }
   ],
-  "updated_at": "22 Oct 2026 03:46"
+  "updated_at": "22 Oct 2026 04:18"
 }
