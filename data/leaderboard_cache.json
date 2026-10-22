@@ -5,26 +5,26 @@
   "end_date": "17 Nov 2026",
   "days_remaining": 26,
   "today_champion": {
-    "name": "MEENAKSHI SHARMA",
-    "today_km": 3.4,
-    "month_km": 12.7,
-    "goal_percent": 12.7,
+    "name": "Girish Chander Kalia",
+    "today_km": 6.3,
+    "month_km": 26.6,
+    "goal_percent": 26.6,
     "streak": 5
   },
   "streak_leader": {
-    "name": "Manoj Sharma",
-    "today_km": 2.2,
-    "month_km": 14.0,
-    "goal_percent": 14.0,
+    "name": "Girish Chander Kalia",
+    "today_km": 6.3,
+    "month_km": 26.6,
+    "goal_percent": 26.6,
     "streak": 5
   },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
-      "today_km": 0,
-      "month_km": 20.3,
-      "goal_percent": 20.3,
-      "streak": 0
+      "today_km": 6.3,
+      "month_km": 26.6,
+      "goal_percent": 26.6,
+      "streak": 5
     },
     {
       "name": "tripti kalia",
@@ -96,6 +96,12 @@
       "title": "Afternoon Walk"
     },
     {
+      "name": "Girish Chander Kalia",
+      "distance": 6.3,
+      "date": "2026-10-22T16:09:54Z",
+      "title": "Day 5"
+    },
+    {
       "name": "MEENAKSHI SHARMA",
       "distance": 3.4,
       "date": "2026-10-22T13:04:57Z",
@@ -130,13 +136,6 @@
       "distance": 2.6,
       "date": "2026-10-21T12:00:48Z",
       "title": "Day 4"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 2.6,
-      "date": "2026-10-21T12:00:45Z",
-      "title": "Lunch Walk"
     }
-  ],
-  "updated_at": "22 Oct 2026 15:17"
+  ]
 }
