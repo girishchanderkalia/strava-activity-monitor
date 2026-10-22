@@ -5,10 +5,10 @@
   "end_date": "17 Nov 2026",
   "days_remaining": 26,
   "today_champion": {
-    "name": "Girish Chander Kalia",
-    "today_km": 6.3,
-    "month_km": 26.6,
-    "goal_percent": 26.6,
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 6.8,
+    "month_km": 16.1,
+    "goal_percent": 16.1,
     "streak": 5
   },
   "streak_leader": {
@@ -27,6 +27,13 @@
       "streak": 5
     },
     {
+      "name": "MEENAKSHI SHARMA",
+      "today_km": 6.8,
+      "month_km": 16.1,
+      "goal_percent": 16.1,
+      "streak": 5
+    },
+    {
       "name": "tripti kalia",
       "today_km": 0,
       "month_km": 15.5,
@@ -38,13 +45,6 @@
       "today_km": 2.2,
       "month_km": 14.0,
       "goal_percent": 14.0,
-      "streak": 5
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "today_km": 3.4,
-      "month_km": 12.7,
-      "goal_percent": 12.7,
       "streak": 5
     },
     {
@@ -81,6 +81,12 @@
       "name": "Deepika  Adyansh",
       "distance": 0.5,
       "date": "2026-10-22T19:49:35Z",
+      "title": "Evening Walk"
+    },
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 3.4,
+      "date": "2026-10-22T19:39:15Z",
       "title": "Evening Walk"
     },
     {
@@ -130,13 +136,7 @@
       "distance": 3.4,
       "date": "2026-10-21T19:00:16Z",
       "title": "Evening Walk"
-    },
-    {
-      "name": "Girish Chander Kalia",
-      "distance": 2.6,
-      "date": "2026-10-21T12:00:48Z",
-      "title": "Day 4"
     }
   ],
-  "updated_at": "22 Oct 2026 15:52"
+  "updated_at": "22 Oct 2026 16:19"
 }
