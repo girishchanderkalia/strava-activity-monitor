@@ -3,42 +3,30 @@
   "goal_km": 100,
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
-  "days_remaining": 26,
-  "today_champion": {
-    "name": "Manoj Sharma",
-    "today_km": 8.4,
-    "month_km": 20.2,
-    "goal_percent": 20.2,
-    "streak": 5
-  },
-  "streak_leader": {
-    "name": "Girish Chander Kalia",
-    "today_km": 6.3,
-    "month_km": 26.6,
-    "goal_percent": 26.6,
-    "streak": 5
-  },
+  "days_remaining": 25,
+  "today_champion": null,
+  "streak_leader": null,
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
-      "today_km": 6.3,
+      "today_km": 0,
       "month_km": 26.6,
       "goal_percent": 26.6,
-      "streak": 5
+      "streak": 0
     },
     {
       "name": "Manoj Sharma",
-      "today_km": 8.4,
+      "today_km": 0,
       "month_km": 20.2,
       "goal_percent": 20.2,
-      "streak": 5
+      "streak": 0
     },
     {
       "name": "MEENAKSHI SHARMA",
-      "today_km": 6.8,
+      "today_km": 0,
       "month_km": 16.1,
       "goal_percent": 16.1,
-      "streak": 5
+      "streak": 0
     },
     {
       "name": "tripti kalia",
@@ -49,10 +37,10 @@
     },
     {
       "name": "Deepika  Adyansh",
-      "today_km": 1.6,
+      "today_km": 0,
       "month_km": 12.6,
       "goal_percent": 12.6,
-      "streak": 2
+      "streak": 0
     },
     {
       "name": "yati sharma",
@@ -138,5 +126,5 @@
       "title": "Evening Walk"
     }
   ],
-  "updated_at": "22 Oct 2026 23:50"
+  "updated_at": "23 Oct 2026 00:42"
 }
