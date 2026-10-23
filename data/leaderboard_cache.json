@@ -1,15 +1,16 @@
 {
-  "updated_at": "23 Oct 2026 03:46",
+  "updated_at": "23 Oct 2026 09:14",
+  "updated_at_utc": "2026-10-23T09:14:21.005879+00:00",
   "challenge_name": "30 Day Walking Challenge",
   "individual_goal": 100,
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 25,
   "today_champion": {
-    "name": "Manoj Sharma",
-    "today_km": 1.0,
-    "month_km": 21.2,
-    "goal_percent": 21.2,
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 5.0,
+    "month_km": 21.1,
+    "goal_percent": 21.1,
     "streak": 6
   },
   "streak_leader": {
@@ -36,10 +37,10 @@
     },
     {
       "name": "MEENAKSHI SHARMA",
-      "today_km": 0,
-      "month_km": 16.1,
-      "goal_percent": 16.1,
-      "streak": 0
+      "today_km": 5.0,
+      "month_km": 21.1,
+      "goal_percent": 21.1,
+      "streak": 6
     },
     {
       "name": "tripti kalia",
@@ -78,6 +79,12 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 5.0,
+      "date": "2026-10-23T12:15:21Z",
+      "title": "Lunch Walk"
+    },
     {
       "name": "Manoj Sharma",
       "distance": 1.0,
@@ -131,12 +138,6 @@
       "distance": 1.4,
       "date": "2026-10-22T07:57:21Z",
       "title": "Morning Walk"
-    },
-    {
-      "name": "Manoj Sharma",
-      "distance": 5.5,
-      "date": "2026-10-21T20:48:22Z",
-      "title": "Evening Walk"
     }
   ]
 }
