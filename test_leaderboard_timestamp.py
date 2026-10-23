@@ -43,11 +43,16 @@ class LeaderboardTimestampTests(unittest.TestCase):
                             clock.now.reset_mock()
 
                             if entry == "manual":
-                                with patch.dict("os.environ", {"ADMIN_KEY": "test-key"}):
-                                    app = runpy.run_path(str(ROOT / "app.py"))["app"]
-                                    response = app.test_client().get(
-                                        "/refresh?key=test-key"
-                                    )
+                                service = types.ModuleType("leaderboard_cache")
+                                service.__dict__.update(runpy.run_path(
+                                    str(ROOT / "leaderboard_cache.py")
+                                ))
+                                with patch.dict(sys.modules, {"leaderboard_cache": service}):
+                                    with patch.dict("os.environ", {"ADMIN_KEY": "test-key"}):
+                                        app = runpy.run_path(str(ROOT / "app.py"))["app"]
+                                        response = app.test_client().get(
+                                            "/refresh?key=test-key"
+                                        )
                                 self.assertEqual(response.status_code, 200)
                             else:
                                 runpy.run_path(str(ROOT / "sync_leaderboard.py"))
@@ -55,6 +60,9 @@ class LeaderboardTimestampTests(unittest.TestCase):
                             storage.save_leaderboard_cache.assert_called_once()
                             saved = storage.save_leaderboard_cache.call_args.args[0]
                             self.assertEqual(saved["updated_at"], "22 Oct 2026 01:36")
+                            self.assertEqual(
+                                saved["updated_at_utc"], "2026-10-22T01:36:00+00:00"
+                            )
                             self.assertEqual(saved["individual_goal"], 100)
                             self.assertNotIn("goal_km", saved)
                             clock.now.assert_called_with(timezone.utc)

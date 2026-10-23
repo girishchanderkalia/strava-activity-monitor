@@ -1,13 +1,16 @@
 import json
-
-from github_storage import (
-    load_leaderboard_cache
-)
+from markupsafe import escape
 
 
-def render_dashboard():
+def render_dashboard(data, cache_state="fresh", refresh_error=None):
 
-    data = load_leaderboard_cache()
+    cache_notice = ""
+    if refresh_error:
+        cache_notice = (
+            '<div class="alert alert-warning" role="alert">'
+            f'{escape(refresh_error)} Showing the last successful update.'
+            '</div>'
+        )
 
     updated_at = data.get(
         "updated_at",
@@ -187,7 +190,12 @@ def render_dashboard():
     <p class="text-muted">
     Last Updated:
     <strong>{updated_at}</strong>
+    (UTC)
+    <br>
+    Cache: <strong>{escape(cache_state)}</strong>
     </p>
+
+    {cache_notice}
 
     <div class="row g-3 mb-4">
 

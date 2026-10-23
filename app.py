@@ -6,10 +6,9 @@ from github_storage import (load_athletes, save_athletes )
 from dashboard import render_dashboard
 from github_storage import (
     load_challenge,
-    save_leaderboard_cache
 )
 
-from leaderboard import build_leaderboard
+from leaderboard_cache import get_leaderboard
 
 app = Flask(__name__)
 
@@ -276,7 +275,16 @@ def callback():
 @app.route("/leaderboard")
 def leaderboard():
 
-    return render_dashboard()
+    result = get_leaderboard()
+    if result.data is None:
+        return result.error, 503
+
+    return render_dashboard(result.data, result.state, result.error)
+
+
+@app.route("/health")
+def health():
+    return {"status": "ok"}
 
 @app.route("/admin")
 def admin():
@@ -380,11 +388,9 @@ def refresh():
             401
         )
 
-    data = build_leaderboard()
-
-    save_leaderboard_cache(
-        data
-    )
+    result = get_leaderboard(force=True)
+    if result.error:
+        return result.error, 503
 
     return """
     <html>

@@ -29,7 +29,8 @@ def get_access_token(refresh_token):
             "client_secret": CLIENT_SECRET,
             "grant_type": "refresh_token",
             "refresh_token": refresh_token
-        }
+        },
+        timeout=30,
     )
 
     response.raise_for_status()
@@ -84,7 +85,8 @@ def build_leaderboard():
             },
             params={
                 "per_page": 200
-            }
+            },
+            timeout=30,
         )
 
         response.raise_for_status()
@@ -235,10 +237,15 @@ def build_leaderboard():
     )
     recent_activities = recent_activities[:10]
 
+    updated_at = datetime.now(timezone.utc)
+
     return {
 
         "updated_at":
-        datetime.now(timezone.utc).strftime("%d %b %Y %H:%M"),
+        updated_at.strftime("%d %b %Y %H:%M"),
+
+        "updated_at_utc":
+        updated_at.isoformat(),
 
         "challenge_name":
         challenge_name,

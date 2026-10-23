@@ -22,7 +22,7 @@ def load_athletes():
         f"{OWNER}/{REPO}/contents/{FILE_PATH}"
     )
 
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers, timeout=30)
     r.raise_for_status()
 
     data = r.json()
@@ -74,7 +74,8 @@ def load_challenge():
 
     r = requests.get(
         url,
-        headers=headers
+        headers=headers,
+        timeout=30,
     )
 
     r.raise_for_status()
@@ -100,13 +101,16 @@ def save_leaderboard_cache(data):
 
     r = requests.get(
         url,
-        headers=headers
+        headers=headers,
+        timeout=30,
     )
 
     sha = None
 
     if r.status_code == 200:
         sha = r.json()["sha"]
+    elif r.status_code != 404:
+        r.raise_for_status()
 
     content = base64.b64encode(
         json.dumps(
@@ -126,7 +130,8 @@ def save_leaderboard_cache(data):
     response = requests.put(
         url,
         headers=headers,
-        json=payload
+        json=payload,
+        timeout=30,
     )
 
     response.raise_for_status()
@@ -142,7 +147,8 @@ def load_leaderboard_cache():
 
     r = requests.get(
         url,
-        headers=headers
+        headers=headers,
+        timeout=30,
     )
 
     r.raise_for_status()
