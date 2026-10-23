@@ -1,6 +1,6 @@
 {
-  "updated_at": "23 Oct 2026 14:31",
-  "updated_at_utc": "2026-10-23T14:31:01.712188+00:00",
+  "updated_at": "23 Oct 2026 18:00",
+  "updated_at_utc": "2026-10-23T18:00:21.180042+00:00",
   "challenge_name": "30 Day Walking Challenge",
   "individual_goal": 100,
   "start_date": "18 Oct 2026",
@@ -29,17 +29,17 @@
       "streak": 6
     },
     {
+      "name": "MEENAKSHI SHARMA",
+      "today_km": 8.0,
+      "month_km": 24.1,
+      "goal_percent": 24.1,
+      "streak": 6
+    },
+    {
       "name": "Manoj Sharma",
       "today_km": 1.0,
       "month_km": 21.2,
       "goal_percent": 21.2,
-      "streak": 6
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "today_km": 5.0,
-      "month_km": 21.1,
-      "goal_percent": 21.1,
       "streak": 6
     },
     {
@@ -51,10 +51,17 @@
     },
     {
       "name": "Deepika  Adyansh",
-      "today_km": 1.1,
-      "month_km": 13.7,
-      "goal_percent": 13.7,
+      "today_km": 1.2,
+      "month_km": 13.8,
+      "goal_percent": 13.8,
       "streak": 3
+    },
+    {
+      "name": "Ratnakar  Bhardwaj ",
+      "today_km": 2.3,
+      "month_km": 8.3,
+      "goal_percent": 8.3,
+      "streak": 2
     },
     {
       "name": "yati sharma",
@@ -69,16 +76,21 @@
       "month_km": 5.7,
       "goal_percent": 5.7,
       "streak": 1
-    },
-    {
-      "name": "Ratnakar  Bhardwaj ",
-      "today_km": 2.3,
-      "month_km": 2.3,
-      "goal_percent": 2.3,
-      "streak": 1
     }
   ],
   "recent_activities": [
+    {
+      "name": "Deepika  Adyansh",
+      "distance": 0.1,
+      "date": "2026-10-23T22:08:45Z",
+      "title": "Night Walk"
+    },
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 3.1,
+      "date": "2026-10-23T19:23:49Z",
+      "title": "Evening Walk"
+    },
     {
       "name": "Rajni Bhardwaj ",
       "distance": 1.9,
@@ -126,18 +138,6 @@
       "distance": 2.3,
       "date": "2026-10-23T07:34:59Z",
       "title": "Morning Walk"
-    },
-    {
-      "name": "Manoj Sharma",
-      "distance": 6.2,
-      "date": "2026-10-22T21:08:17Z",
-      "title": "Night Walk"
-    },
-    {
-      "name": "Deepika  Adyansh",
-      "distance": 0.5,
-      "date": "2026-10-22T19:49:35Z",
-      "title": "Evening Walk"
     }
   ]
 }
