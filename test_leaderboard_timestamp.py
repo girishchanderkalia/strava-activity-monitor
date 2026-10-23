@@ -16,7 +16,7 @@ class LeaderboardTimestampTests(unittest.TestCase):
         storage.load_athletes = Mock(return_value=([], None))
         storage.load_challenge = Mock(return_value={
             "name": "Test",
-            "goal_km": 100,
+            "individual_goal": 100,
             "start_date": "2026-10-01",
             "end_date": "2026-10-31",
         })
@@ -55,6 +55,8 @@ class LeaderboardTimestampTests(unittest.TestCase):
                             storage.save_leaderboard_cache.assert_called_once()
                             saved = storage.save_leaderboard_cache.call_args.args[0]
                             self.assertEqual(saved["updated_at"], "22 Oct 2026 01:36")
+                            self.assertEqual(saved["individual_goal"], 100)
+                            self.assertNotIn("goal_km", saved)
                             clock.now.assert_called_with(timezone.utc)
 
 

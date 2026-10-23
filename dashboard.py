@@ -17,7 +17,7 @@ def render_dashboard():
     athletes = data["leaderboard"]
 
     challenge_name = data["challenge_name"]
-    goal_km = data["goal_km"]
+    individual_goal = data["individual_goal"]
 
     start_date = data["start_date"]
     end_date = data["end_date"]
@@ -269,10 +269,10 @@ def render_dashboard():
 
                 <div class="card-body p-2 text-center">
 
-                    <h6>🎯 Goal</h6>
+                    <h6>🎯 Individual Goal (km)</h6>
 
                     <h3 class="fw-bold mb-0">
-                    {goal_km}
+                    {individual_goal}
                     </h3>
 
                 </div>
@@ -365,7 +365,7 @@ def render_dashboard():
     <th>Today KM</th>
     <th>👣 Walks</th>
     <th class="d-none d-md-table-cell">🔥 Streak</th>
-    <th class="d-none d-md-table-cell">🎯 Goal %</th>
+    <th class="d-none d-md-table-cell">🎯 Individual Goal %</th>
     
 
     </tr>

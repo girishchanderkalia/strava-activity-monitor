@@ -346,8 +346,8 @@ def admin():
 
             <br>
 
-            Goal:
-            {challenge['goal_km']} km
+            Individual Goal:
+            {challenge['individual_goal']} km per person
 
             </p>
 

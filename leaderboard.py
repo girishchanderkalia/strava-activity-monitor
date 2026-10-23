@@ -44,7 +44,7 @@ def build_leaderboard():
     challenge = load_challenge()
 
     challenge_name = challenge["name"]
-    goal_km = challenge["goal_km"]
+    individual_goal = challenge["individual_goal"]
 
     start_date = datetime.strptime(
         challenge["start_date"],
@@ -165,7 +165,7 @@ def build_leaderboard():
 
         goal_percent = round(
             (
-                challenge_km / goal_km
+                challenge_km / individual_goal
             ) * 100,
             1
         )
@@ -243,8 +243,8 @@ def build_leaderboard():
         "challenge_name":
         challenge_name,
 
-        "goal_km":
-        goal_km,
+        "individual_goal":
+        individual_goal,
 
         "start_date":
         start_date.strftime(
