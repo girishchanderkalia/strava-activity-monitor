@@ -1,16 +1,16 @@
 {
-  "updated_at": "24 Oct 2026 12:59",
-  "updated_at_utc": "2026-10-24T12:59:54.360876+00:00",
+  "updated_at": "24 Oct 2026 13:56",
+  "updated_at_utc": "2026-10-24T13:56:45.441710+00:00",
   "challenge_name": "30 Day Walking Challenge",
   "individual_goal": 100,
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 24,
   "today_champion": {
-    "name": "Girish Chander Kalia",
-    "today_km": 6.0,
-    "month_km": 41.6,
-    "goal_percent": 41.6,
+    "name": "MEENAKSHI SHARMA",
+    "today_km": 9.0,
+    "month_km": 33.1,
+    "goal_percent": 33.1,
     "streak": 7
   },
   "streak_leader": {
@@ -30,9 +30,9 @@
     },
     {
       "name": "MEENAKSHI SHARMA",
-      "today_km": 3.9,
-      "month_km": 28.0,
-      "goal_percent": 28.0,
+      "today_km": 9.0,
+      "month_km": 33.1,
+      "goal_percent": 33.1,
       "streak": 7
     },
     {
@@ -50,18 +50,18 @@
       "streak": 0
     },
     {
-      "name": "Deepika  Adyansh",
-      "today_km": 0,
-      "month_km": 13.8,
-      "goal_percent": 13.8,
-      "streak": 0
+      "name": "Ratnakar  Bhardwaj ",
+      "today_km": 8.1,
+      "month_km": 16.4,
+      "goal_percent": 16.4,
+      "streak": 3
     },
     {
-      "name": "Ratnakar  Bhardwaj ",
-      "today_km": 5.0,
-      "month_km": 13.4,
-      "goal_percent": 13.4,
-      "streak": 3
+      "name": "Deepika  Adyansh",
+      "today_km": 1.3,
+      "month_km": 15.1,
+      "goal_percent": 15.1,
+      "streak": 4
     },
     {
       "name": "yati sharma",
@@ -79,6 +79,24 @@
     }
   ],
   "recent_activities": [
+    {
+      "name": "Deepika  Adyansh",
+      "distance": 1.3,
+      "date": "2026-10-24T18:12:03Z",
+      "title": "Evening Walk"
+    },
+    {
+      "name": "Ratnakar  Bhardwaj ",
+      "distance": 3.1,
+      "date": "2026-10-24T17:33:37Z",
+      "title": "Afternoon Walk"
+    },
+    {
+      "name": "MEENAKSHI SHARMA",
+      "distance": 5.1,
+      "date": "2026-10-24T15:40:42Z",
+      "title": "Afternoon Walk"
+    },
     {
       "name": "MEENAKSHI SHARMA",
       "distance": 3.9,
@@ -120,24 +138,6 @@
       "distance": 1.9,
       "date": "2026-10-23T18:08:34Z",
       "title": "Evening Walk"
-    },
-    {
-      "name": "Deepika  Adyansh",
-      "distance": 1.1,
-      "date": "2026-10-23T17:35:53Z",
-      "title": "Afternoon Walk"
-    },
-    {
-      "name": "Girish Chander Kalia",
-      "distance": 5.1,
-      "date": "2026-10-23T12:25:03Z",
-      "title": "Day 6"
-    },
-    {
-      "name": "MEENAKSHI SHARMA",
-      "distance": 5.0,
-      "date": "2026-10-23T12:15:21Z",
-      "title": "Lunch Walk"
     }
   ]
 }
