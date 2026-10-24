@@ -1,32 +1,32 @@
 {
-  "updated_at": "24 Oct 2026 08:20",
-  "updated_at_utc": "2026-10-24T08:20:02.493723+00:00",
+  "updated_at": "24 Oct 2026 11:29",
+  "updated_at_utc": "2026-10-24T11:29:37.656422+00:00",
   "challenge_name": "30 Day Walking Challenge",
   "individual_goal": 100,
   "start_date": "18 Oct 2026",
   "end_date": "17 Nov 2026",
   "days_remaining": 24,
   "today_champion": {
-    "name": "Ratnakar  Bhardwaj ",
-    "today_km": 5.0,
-    "month_km": 13.4,
-    "goal_percent": 13.4,
-    "streak": 3
+    "name": "Girish Chander Kalia",
+    "today_km": 6.0,
+    "month_km": 41.6,
+    "goal_percent": 41.6,
+    "streak": 7
   },
   "streak_leader": {
-    "name": "MEENAKSHI SHARMA",
-    "today_km": 3.9,
-    "month_km": 28.0,
-    "goal_percent": 28.0,
+    "name": "Girish Chander Kalia",
+    "today_km": 6.0,
+    "month_km": 41.6,
+    "goal_percent": 41.6,
     "streak": 7
   },
   "leaderboard": [
     {
       "name": "Girish Chander Kalia",
-      "today_km": 0,
-      "month_km": 35.6,
-      "goal_percent": 35.6,
-      "streak": 0
+      "today_km": 6.0,
+      "month_km": 41.6,
+      "goal_percent": 41.6,
+      "streak": 7
     },
     {
       "name": "MEENAKSHI SHARMA",
@@ -92,6 +92,12 @@
       "title": "Lunch Walk"
     },
     {
+      "name": "Girish Chander Kalia",
+      "distance": 6.0,
+      "date": "2026-10-24T11:57:53Z",
+      "title": "Day 7"
+    },
+    {
       "name": "Ratnakar  Bhardwaj ",
       "distance": 5.0,
       "date": "2026-10-24T06:11:09Z",
@@ -131,12 +137,6 @@
       "name": "MEENAKSHI SHARMA",
       "distance": 5.0,
       "date": "2026-10-23T12:15:21Z",
-      "title": "Lunch Walk"
-    },
-    {
-      "name": "tripti kalia",
-      "distance": 3.4,
-      "date": "2026-10-23T11:18:20Z",
       "title": "Lunch Walk"
     }
   ]
